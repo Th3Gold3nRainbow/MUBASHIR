@@ -33,3 +33,15 @@ Le script affiche alors les articles correspondants.
 
 La base de données est créée automatiquement dans le fichier `articles.db` (qui
 n'est pas suivi par git).
+
+## Interface web
+Une petite interface web est disponible à l'aide de Flask. Installez la
+dépendance puis lancez le serveur :
+
+```bash
+pip install -r requirements.txt
+python3 web_app.py
+```
+
+Ouvrez ensuite `http://localhost:5000` dans votre navigateur pour ajouter ou
+rechercher des articles via une page web simple.

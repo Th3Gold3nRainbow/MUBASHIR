@@ -47,6 +47,21 @@ def search_article(term):
     return results
 
 
+def list_articles():
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    c.execute(
+        """
+        SELECT id, name, ean, plu
+        FROM articles
+        ORDER BY id
+        """
+    )
+    results = c.fetchall()
+    conn.close()
+    return results
+
+
 def main():
     parser = argparse.ArgumentParser(description="Offline Article Database CLI")
     subparsers = parser.add_subparsers(dest="command")
